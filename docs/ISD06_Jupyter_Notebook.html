@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>ISD04_Pycharm_IDE_Installation</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>ISD06_Jupyter_Notebook</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
@@ -11784,59 +11784,26 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="ISD04---Installing-Pycharm">ISD04 - Installing Pycharm<a class="anchor-link" href="#ISD04---Installing-Pycharm">&#182;</a></h1><p>Now that we've downloaded the scouting system code, it would be useful to have a tool for viewing and editing the code. The IRS uses the Pycharm integrated development environment (IDE) for programming in Python. An IDE is sort of a sophistcated word processor for computer programming. This document explains how to download and install the IDE, and how to create an IDE project so you can open and edit the code in the IDE.</p>
-<h2 id="1.-Download-and-Install-Pycharm-IDE">1. Download and Install Pycharm IDE<a class="anchor-link" href="#1.-Download-and-Install-Pycharm-IDE">&#182;</a></h2><ol>
-<li><p>Go to <a href="https://www.jetbrains.com/pycharm/download">https://www.jetbrains.com/pycharm/download</a> and download the <em>Community Edition</em> of Pycharm for your operating system.</p>
+<h1 id="ISD06---Testing-the-Scouting-System-with-a-Jupyter-Notebook">ISD06 - Testing the Scouting System with a Jupyter Notebook<a class="anchor-link" href="#ISD06---Testing-the-Scouting-System-with-a-Jupyter-Notebook">&#182;</a></h1><p>Finally, we'll use a Jupyter notebook to test the scouting system. Jupyter notebooks allow you to run Python code and display output within a web browser.</p>
+<ol>
+<li><p>Open a command window with the location set to your scouting system project folder (should have subfolders named "jupyter" and "Server", among others).</p>
 </li>
-<li><p>Run the installer program and accept all default options.</p>
+<li><p>Enter the command <code>Jupyter Notebook</code>. Your web broswer should open to a page showing the contents of the scouting system project folder:</p>
+<p><img src="images\ISD06\jupyter.png" alt="Jupyter Notebook Home Page"></p>
 </li>
-</ol>
-<h2 id="2.-Creating-a-Pycharm-Project-for-the-Scouting-System">2. Creating a Pycharm Project for the Scouting System<a class="anchor-link" href="#2.-Creating-a-Pycharm-Project-for-the-Scouting-System">&#182;</a></h2><ol>
-<li><p>Run the Pycharm IDE.</p>
+<li><p>Select the <em>jupyter</em> subfolder.</p>
 </li>
-<li><p>Click on <em>Create New Project</em>:</p>
-<p><img src="images\ISD04\pycharm_open.png" alt="Create New Project in Pycharm"></p>
+<li><p>Select the <em>System_Test</em> file:</p>
+<p><img src="images\ISD06\jupyter_subfolder.png" alt="Jupyter Subfolder"></p>
 </li>
-<li><p>Click the button with the elipses and navigate to the folder that contains the scouting system code. Click on <em>OK</em> and then <em>Create</em>:</p>
-<p><img src="images\ISD04\pycharm_create.png" alt="Select Project Folder"></p>
+<li><p>Select <em>Run All</em> form the <em>Cell</em> menu.</p>
+<p><img src="images\ISD06\system_test_notebook.png" alt="System Test Notebook"></p>
 </li>
-<li><p>You will see a dialog box stating that the project folder is not empty and asking if you want to include the contents of the folder in the project. Click <em>Yes</em>.</p>
-<p><img src="images\ISD04\folder_contents.png" alt="Include Folder Contents"></p>
+<li><p>Scroll to the bottom of the notebook. If everything was installed and configured correctly, you'll see a bar chart showing the average number of gears placed per match for every team in the Turing Division at the 2017 FIRST World Championships in Houston, TX.</p>
 </li>
 </ol>
-<h2 id="3.-Viewing-Scouting-System-Files">3. Viewing Scouting System Files<a class="anchor-link" href="#3.-Viewing-Scouting-System-Files">&#182;</a></h2><p>By default, Pycharm displays code files and subfolders in the project window on the left, and file contents on the right. The top row of the project window represents the top folder of the project folder. Expand the top row by clicking the adjacent down arrow to view the contents. Navigate down to the <em>Server/Scouting/match.py</em> folder and open it to view the contents. The right side window now displays the Python code contained in this file:</p>
-
-<pre><code>![View Folder](images\ISD04\pycharm_main.png)
-
-</code></pre>
-<h2 id="4.-Configuring-Pycharm">4. Configuring Pycharm<a class="anchor-link" href="#4.-Configuring-Pycharm">&#182;</a></h2><ol>
-<li><p>You will most likely see a yellow warning banner at the top of the file stating that Pychar has not been configured with a Python interpreter. Pycharm must be able to run Python programs from within the IDE in order to support code testing and debugging. To run Python programs, Pycharm must be able to find Python installation. To configure Pycharm to find the Python interpreter, go to <em>File -&gt; Settings -&gt; Project Interpreter</em>. If the <em>Project Interpreter</em> section looks like the figure below, with no no interpreter listed in the <em>Python Interpreter</em> drop-down box and no Python packages are listed on the dialog, then we'll have to tell Pycharm how to find Python.</p>
-<p><img src="images\ISD04\pycharm_settings.png" alt="Project Settings"></p>
-</li>
-<li><p>Expand the <em>Project Interpreter</em> drop down box and select <em>Show All...</em> option.</p>
-</li>
-<li><p>The <em>Project Interpreters</em> dialog will appear. Click on the green plus sign and select <em>Add Local...</em>.</p>
-<p><img src="images\ISD04\pycharm_interpreter.png" alt="Configure Interpreter"></p>
-</li>
-<li><p>The <em>Add local Python Interpreter</em> dialog will appear. Select <em>System Interpreter</em> and verify that the path <em>C:\Users{account name}\Anaconda3\python3</em> is in the <em>Interpreter</em> box near the top of the dialog. If not, select the elipses ("...") button and select the <em>Anaconda3</em> folder that contains the <em>python3.exe</em> file.</p>
-<p><img src="images\ISD04\pycharm_interpreter2.png" alt="Add Interpreter"></p>
-</li>
-<li><p>Click <em>OK</em> to save changes until you get back to the main settings dialog. You should see <em>Python3</em> in the <em>Project Interpreter</em> window and a list of Python packsges:</p>
-<p><img src="images\ISD04\pycharm_interpreter3.png" alt="Configured Interpreter"></p>
-</li>
-<li><p>Hit <em>OK</em> one more time to save changes. You should no longer see the yellow project interpreter warning banner.</p>
-</li>
-</ol>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Further Reading:</strong>
-Pycharm Documentation: <a href="https://www.jetbrains.com/help/pycharm/meet-pycharm.html">https://www.jetbrains.com/help/pycharm/meet-pycharm.html</a></p>
+<a href="http://nbviewer.jupyter.org/github/ipython/ipython/blob/3.x/examples/Notebook/Index.ipynb">http://nbviewer.jupyter.org/github/ipython/ipython/blob/3.x/examples/Notebook/Index.ipynb</a></p>
 
 </div>
 </div>
@@ -11846,7 +11813,7 @@ Pycharm Documentation: <a href="https://www.jetbrains.com/help/pycharm/meet-pych
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Version-Info">Version Info<a class="anchor-link" href="#Version-Info">&#182;</a></h2><ul>
-<li><strong>Last Revised:</strong> 22 Dec 2017</li>
+<li><strong>Last Revised:</strong> 25 Dec 2017</li>
 <li><strong>Revised by:</strong> Stacy I.</li>
 </ul>
 <p><a href="index.html">Back to Overview</a></p>
