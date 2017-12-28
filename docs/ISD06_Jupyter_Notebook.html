@@ -11784,7 +11784,15 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="ISD06---Testing-the-Scouting-System-with-a-Jupyter-Notebook">ISD06 - Testing the Scouting System with a Jupyter Notebook<a class="anchor-link" href="#ISD06---Testing-the-Scouting-System-with-a-Jupyter-Notebook">&#182;</a></h1><p>Finally, we'll use a Jupyter notebook to test the scouting system. Jupyter notebooks allow you to run Python code and display output within a web browser.</p>
+<h1 id="ISD06---Testing-the-Scouting-System">ISD06 - Testing the Scouting System<a class="anchor-link" href="#ISD06---Testing-the-Scouting-System">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="1.-Test-Database-Access-with-a-Jupyter-Notebook">1. Test Database Access with a Jupyter Notebook<a class="anchor-link" href="#1.-Test-Database-Access-with-a-Jupyter-Notebook">&#182;</a></h2><p>Finally, we'll use a Jupyter notebook to test the scouting system. Jupyter notebooks allow you to run Python code and display output within a web browser.</p>
 <ol>
 <li><p>Open a command window with the location set to your scouting system project folder (should have subfolders named "jupyter" and "Server", among others).</p>
 </li>
@@ -11812,8 +11820,29 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="2.-Test-the-Cherry-Py-Server-From-the-Command-Line">2. Test the Cherry Py Server From the Command Line<a class="anchor-link" href="#2.-Test-the-Cherry-Py-Server-From-the-Command-Line">&#182;</a></h2><ol>
+<li><p>Open a command window in the scouting system project folder.</p>
+</li>
+<li><p>Enter <code>cd Server</code> to go to the server subdirectory.</p>
+</li>
+<li><p>Run the following in the command prompt:</p>
+
+<pre><code>python scoutingapi.py</code></pre>
+</li>
+<li><p>Go to the URL <code>localhost:8080</code>. You should see a page that looks like this:</p>
+<p><img src="images\ISD06\cherrypy_director.png" alt="Scouting System Interface"></p>
+</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Version-Info">Version Info<a class="anchor-link" href="#Version-Info">&#182;</a></h2><ul>
-<li><strong>Last Revised:</strong> 25 Dec 2017</li>
+<li><strong>Last Revised:</strong> 27 Dec 2017</li>
 <li><strong>Revised by:</strong> Stacy I.</li>
 </ul>
 <p><a href="index.html">Back to Overview</a></p>
