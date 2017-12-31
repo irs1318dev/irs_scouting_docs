@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>ISD05_PostgreSQL_Installation</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>ISD07_Python_Tutorial</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
@@ -11784,37 +11784,19 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="ISD05---PostgreSQL">ISD05 - PostgreSQL<a class="anchor-link" href="#ISD05---PostgreSQL">&#182;</a></h1><p>The PostgreSQL database server is a crucial part of the IRS scouting system. PostgreSQL is a database server that stores the data entered into the scouting system and subsequently retrives data for display and analysis.</p>
-<h2 id="1.-Installation">1. Installation<a class="anchor-link" href="#1.-Installation">&#182;</a></h2><ol>
-<li><p>Go to <a href="https://www.postgresql.org/download/windows/">https://www.postgresql.org/download/windows/</a> and download the Windows installer for PostgreSQL.</p>
-</li>
-<li><p>Run the installer. When asked for a password, enter <code>irs1318</code>. Otherwise select all default options.</p>
-</li>
-</ol>
-<h2 id="2.-Configure-Database-Service">2. Configure Database Service<a class="anchor-link" href="#2.-Configure-Database-Service">&#182;</a></h2><p>By default, Postgresql will run in the background all the time. You probably don't want a database server running all of the time on your computer. To change the default behavior:</p>
-<ol>
-<li><p>Verify the location of your Postgresql data directory. It’s probably located in <code>C:\Program Files\PostgreSQL\10\data</code>.</p>
-</li>
-<li><p>Refer to section ISD02 and add an environment variable called PGDATA (if it doesn't already exist). The value of the environment variable will be the location of the PostgreSQL data directory (<code>C:\Program Files\PostgreSQL\10\data</code>)</p>
-<p><img src="images/ISD05/env_pgdata.png" alt="Edit PGDATA Variable"></p>
-</li>
-<li><p>While you have the environment variable dialogs open, add the location of the Postgresql <em>bin</em> folder to the <code>Path</code> variable for your account. It's probably at <code>C:\Program Files\PostgreSQL\10\bin</code>.</p>
-</li>
-<li><p>Type "Services" into the task bar search box and select the <em>Services</em> desktop app.</p>
-</li>
-<li><p>Find and double-click on the <em>Postgresql-x64-10</em> service.</p>
-
-<pre><code> ![Windows Services](images/ISD05/pg_service.png)</code></pre>
-</li>
-<li><p>Change the value in the <em>Startup type:</em> dropdown box to <em>Manual</em>. Click <em>OK</em>.</p>
-<p><img src="images/ISD05/pg_manual_service.png" alt="Manual Service"></p>
-</li>
-<li><p>Now open a command prompt and see if the database server is running by typing <code>pg_ctl status</code>. You should see this:</p>
-<p><img src="images/ISD05/pg_ctl_status.png" alt="Database Server Status"></p>
-</li>
-<li><p>Type <code>pg_ctl start</code> to start the server. (You can stop the server by typing <code>pg_ctl stop</code>, but leave the server running if you are continuing to seciton 3.</p>
-</li>
-</ol>
+<h1 id="Getting-Started-with-the-Python-Tutorial">Getting Started with the Python Tutorial<a class="anchor-link" href="#Getting-Started-with-the-Python-Tutorial">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="1.-The-Python-Tutorial">1. The Python Tutorial<a class="anchor-link" href="#1.-The-Python-Tutorial">&#182;</a></h2><p>The Python Software Foundation provides an excellent tutorial and other Python documentation at <a href="https://docs.python.org/3/">https://docs.python.org/3/</a>. Bookmark this page -- you will be referring to it frequently.</p>
+<p>We'll start in the tutorial section:
+  <img src="images/ISD07/python_docs.png" alt="Python Documentation"></p>
+<p>Feel free to read chapters 1 and 2 of the tutorial, but for now we'll go right to chapter 3:</p>
+<p><img src="images/ISD07/python_toc.png" alt="Python Tutorial Table of Contents"></p>
 
 </div>
 </div>
@@ -11823,24 +11805,10 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="3.-Create-a-Role-and-a-Database">3. Create a Role and a Database<a class="anchor-link" href="#3.-Create-a-Role-and-a-Database">&#182;</a></h2><ol>
-<li><p>If the database server is not already running, open an command window and type <code>pg_ctl start</code>.</p>
-</li>
-<li><p>Open the pgAdmin4 program on the start menu.</p>
-<p><img src="images\ISD05\pgadmin.png" alt="pgAdmin 4"></p>
-</li>
-<li><p>Expand the items in the browser window on the left (<em>Servers -&gt; PostgreSQL 10 -&gt; Login/Group Roles</em>). Right click on <em>Login/Group Roles</em> and select <em>Create -&gt; Login/Group Role...</em>.</p>
-<p><img src="images\ISD05\pg_create_role.png" alt="Create Database Role"></p>
-</li>
-<li><p>The <em>Create Login/Group Role</em> dialog will appear. On the general tab, name the role "irs1318". On the <em>Definition</em> tab, assign the password "irs1318". On the <em>Priviliges</em> tab, set <em>Can Login</em> and <em>Create databases</em> to <em>Yes</em>.</p>
-<p><img src="images\ISD05\pg_permissions.png" alt="Assign Permissions"></p>
-</li>
-<li><p>Close pgAdmin and open a command prompt. Enter the following command to create a new database:</p>
-
-<pre><code> createdb -U irs1318 scouting</code></pre>
-<p>When PostgreSQL prompts you for a password, enter <em>irs1318</em>. This command tells PostgreSQL to create a new database named <em>scouting</em> and to assign the scouting database to the irs1318 role.</p>
-</li>
-</ol>
+<h2 id="2.-Create-a-New-Jupyter-Notebook">2. Create a New Jupyter Notebook<a class="anchor-link" href="#2.-Create-a-New-Jupyter-Notebook">&#182;</a></h2><p>Learning by doing is more effective than learning by reading. Therefore, we'll experiment with the concepts in the <em>Python Tutorial</em> by running Python code in a Juptyer notebook.</p>
+<p>A. Create a new folder to store your notebooks. Run <code>jupyter notebook</code> at the command line from this folder.</p>
+<p>B. In the jupyter browswer window, create a new Python notebook by clicking the <em>New</em> button in the upper right portion of the window and selecting <em>Python 3</em>.</p>
+<p><img src="images/ISD07/jupyter_new.png" alt="Jupyter Notebooks"></p>
 
 </div>
 </div>
@@ -11849,19 +11817,15 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="4.-Upload-Competition-Data-to-PostgreSQL-Server">4. Upload Competition Data to PostgreSQL Server<a class="anchor-link" href="#4.-Upload-Competition-Data-to-PostgreSQL-Server">&#182;</a></h2><ol>
-<li><p>Open a command window and navigate to the <em>...\irsScouting2017\Server\web\data</em> folder, which should be within your scouting project folder.</p>
-</li>
-<li><p>Verify that the folder contains the file <em>turing_2017_0422_1009</em>. This is a database backup file from the 2017 FIRST World Championships in Houston Texas, Turing Division.</p>
-</li>
-<li><p>Enter the following command to upload this data to the database:</p>
+<h2 id="3.-Running-Python-Code-in-a-Notebook">3. Running Python Code in a Notebook<a class="anchor-link" href="#3.-Running-Python-Code-in-a-Notebook">&#182;</a></h2><p>Now that you've created a notebook, you should see this:</p>
+<p><img src="images/ISD07/notebook_cell.png" alt="Python Notebook Cell"></p>
+<p>A. Enter the following code into the empty cell (the grey box to the right of <em>In [ ]:</em>) and then press SHIFT + ENTER.|</p>
 
-<pre><code> psql scouting &lt; turing_2017_0422_1009 irs1318</code></pre>
-<p>Enter <code>irs1318</code> when prompted for a password.</p>
-</li>
-<li><p>Congratulations. Your computer is now running the IRS scouting system. In the next document, we will use Python and Structured Query Language (SQL) to retreive and display FIRST Robotics Competition (FRC) data.</p>
-</li>
-</ol>
+<pre><code>  var = 659 * 2
+  var</code></pre>
+<p>Jupyter notebook cells will execute whatever Python code you type into them when you press SHFIT + ENTER. Furthermore, the notebook will print the value of the last line (i.e., Python statement) in the cell. For the code above, we calculated the product of 659 and 2 and assigned the product to variable called <code>var</code>. Finally, we forced Jupyter to display the value stored in <code>var</code> by typing <code>var</code> on the final line of the cell.</p>
+<p>B. You can name your notebook by clicking the text "Untitled" near the top of the page and entering a new name. Use the <em>Save</em> option from the file menu or the <em>Save</em> icon to save your work.</p>
+<p>C. When you are finished working in the notebook, be sure to select <em>Close and Halt</em> from the <em>File</em> menu. This shuts down the Python kernal that is running the notebook. If you close the window without selecting <em>Close and Halt</em>, the Python kernal will continue to run.</p>
 
 </div>
 </div>
@@ -11870,8 +11834,14 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Further Reading:</strong>
-PostgreSQL Documentation: <a href="https://www.postgresql.org/docs/10/static/index.html">https://www.postgresql.org/docs/10/static/index.html</a></p>
+<h2 id="4.-Working-Through-the-Tutorial----Part-1">4. Working Through the Tutorial -- Part 1<a class="anchor-link" href="#4.-Working-Through-the-Tutorial----Part-1">&#182;</a></h2><p>Now go back to chapter 3 of the <em>Python Tutorial</em> and work through the examples. Use the Jupyter notebook to experiment with the Python code from the tutorial. Work through the following chapters at a minimum. Each section lists exercises you should be able to complete after working through the chapter.</p>
+<h3 id="Chapter-3:-An-Informal-Introduction-to-Python">Chapter 3: An Informal Introduction to Python<a class="anchor-link" href="#Chapter-3:-An-Informal-Introduction-to-Python">&#182;</a></h3><p>A. Calculate and display the density of a 5.3 x 12.7 x 2.6 foot block that weighs 1,318 pounds, in both lb/ft3 and kg/m3.  Be sure to user variables.</p>
+<p>B. Store the first names of at least three of your fellow team members in a Python list. Using the list, print out the names on a single line, separated by commas.</p>
+<h3 id="Chapter-4:-More-Control-Flow-Tools">Chapter 4: More Control Flow Tools<a class="anchor-link" href="#Chapter-4:-More-Control-Flow-Tools">&#182;</a></h3><p>A. Write a function that accepts distance and gallons arguments and returns miles per gallon.</p>
+<p>B. Write a function that accepts a string as an argument and determines whether the string has an even or odd number of letters.</p>
+<p>C. Write a function that accepts an number and returns a list of all positive integers that are smaller than or equal to the number, but are divisible by 13. If the number passed as an argument is less than 13, the function should return the string "ERROR".</p>
+<h3 id="Chapter-5:-Data-Structures">Chapter 5: Data Structures<a class="anchor-link" href="#Chapter-5:-Data-Structures">&#182;</a></h3><p>A. Use a list comprehension to generate a list of the first 100 integers divisible by 13. The first element of the list should be 13, not 0.</p>
+<p>B. Use the list created in section A to create a dictionary of the form <code>{"val_1": 13, "val_2: 26, ... "val_100": 1287}</code>. The dictionary should have 100 elements.</p>
 
 </div>
 </div>
@@ -11880,56 +11850,47 @@ PostgreSQL Documentation: <a href="https://www.postgresql.org/docs/10/static/ind
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="5.-Using-Microsoft-Access-to-View-Contents-of-Scouting-Database">5. Using Microsoft Access to View Contents of Scouting Database<a class="anchor-link" href="#5.-Using-Microsoft-Access-to-View-Contents-of-Scouting-Database">&#182;</a></h2><ol>
-<li><p>Download and install the PostgreSQL ODBC driver from <a href="https://www.postgresql.org/ftp/odbc/versions/msi/">https://www.postgresql.org/ftp/odbc/versions/msi/</a>. ODBC, which stands for open database connectivity, is a standard protocol for programs to commmunicate with database servers. Microsoft Access will use the ODBC driver to communicate with the PostgreSQL database server.</p>
+<h2 id="5.-Working-Through-the-Tutorial----Part-2">5. Working Through the Tutorial -- Part 2<a class="anchor-link" href="#5.-Working-Through-the-Tutorial----Part-2">&#182;</a></h2><p>The following tutorial chapters are essential to understanding the scouting system Python code, but the Pycharm IDE is better for experimenting with the concepts. Python IDE essentials will be covered in a subsequent ISD.</p>
 <ul>
-<li>Check the version dates and download the most recent version of the driver, most likely located at the bottom of the page.</li>
-<li>PostgreSQL gives you the choice of downloading either the 32 or 64 bit versions of the ODBC driver.<ul>
-<li>Only download the 64-bit version (file name ends in <em>x64</em>) if you installed the 64-bit version of Microsoft Access. Otherwise download and install the 32-bit version (file name ends in <em>x86</em>). Even though you probably have a 64-bit computer, you probably have the 32-bit version of Access because that's what Microsoft installs by default.</li>
-<li>You can use the Microsoft Office installation location to determine whether you have the 32 or 64-bit version. If Microsoft Office is installed in <em>C:\Program Files (x86)</em>, you have the 32-bit version. If it's installed in <em>C:\Program Files</em>, then you have the 64-bit version.</li>
+<li>Chapter 6: Modules</li>
+<li>Chapter 7: Input and Output</li>
+<li>Chapter 8: Errors and Exceptions</li>
+<li>Chapter 9: Classes</li>
 </ul>
-</li>
-</ul>
-</li>
-<li><p>Open Microsoft Access and create a new empty database.</p>
-</li>
-<li><p>Select <em>External Data -&gt; New Data Scource -&gt; From Other Sources -&gt; ODBC Database</em> from the ribbon bar.</p>
-</li>
-<li><p>Select <em>Link to the datasource by creating a linked table</em> and click <em>OK</em>.</p>
-</li>
-<li><p>Select the <em>Machine Data Source</em> tab and click <em>New</em>.</p>
-</li>
-<li><p>Leave <em>User Data Source</em> checked and click <em>Next</em>.</p>
-</li>
-<li><p>Select the <em>PostgreSQL Unicode</em> database driver from the list and click <em>Next</em>. Then click <em>Finish</em>.</p>
-</li>
-<li><p>Enter the database connection information into the next dialog.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="6.-Python-Library-Documentation">6. Python Library Documentation<a class="anchor-link" href="#6.-Python-Library-Documentation">&#182;</a></h2><p>In addition to the <em>Python Tutorial</em>, the <em>Python Library Reference</em> is also essential to developing proficiency with Python and workign with the IRS scouting system. You can navigate to the <em>Library Reference</em> from the main Pyton documenation page at <a href="https://docs.python.org/3/">https://docs.python.org/3/</a> or go directy to the page via <a href="https://docs.python.org/3/library/index.html">https://docs.python.org/3/library/index.html</a>.</p>
+<p>Focus on these parts of the Libary Documentation first:</p>
 <ul>
-<li>Database: scouting</li>
-<li>Server: localhost</li>
-<li>User Name: irs1318</li>
-<li>Description: IRS Scouting Database</li>
-<li>Port: 5432</li>
-<li>Password: irs1318</li>
+<li><strong>Section 2: Built-in Functions</strong><ul>
+<li>I still refer to this section frequently when I'm working in Python.</li>
 </ul>
 </li>
-<li><p>Click <em>Test</em>. You should see a dialog that says <em>Connection Successful</em>. If you get an error, double check your settings and make sure the PostgreSQL database server is running. Once the test is successful, click <em>Save</em>.</p>
-</li>
-<li><p>Clock <em>OK</em> on the top level dialog. You should now see a list of all tables in the scouting database. Click <em>Select All</em> and <em>OK</em>.</p>
-</li>
-<li><p>Next, Access will display a list of all fields in the <em>measures</em> table and will ask to select up to 10 fields that uniquely idenitfy each row (this is happening because the <em>measures</em> table uses a multi-field primary key -- all other tables in the database use a single <em>id</em> column for the primary key). Select <em>date _id, event_id, level_id, match_id, alliance_id, team_id, actor_id, task_id, phase_id, and reason_id</em> and click <em>OK</em>.</p>
-</li>
-<li><p>Now you should see a list of tables in the scouting database. Double click on any tables to see it's contents.</p>
-</li>
-<li><p>Save the database to a new file (<em>File -&gt; </em>Save As*) before closing it, to ensure the links to the PostgreSQL tables are saved.</p>
-</li>
-<li><p>Other useful things you can do in Access:</p>
-<ul>
-<li>View database diagrams (relationships, table structure).</li>
-<li>Change a datapoint for troubleshooting. Be careful -- make a backup of the database before you do this!</li>
+<li><strong>Section 3: Built-in Types</strong><ul>
+<li>Another section of the documenation that I use frequently.</li>
 </ul>
 </li>
-</ol>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="7.-Other-Topics">7. Other Topics<a class="anchor-link" href="#7.-Other-Topics">&#182;</a></h2><ul>
+<li><strong>Python Libarry Section 6.1: Regular Expressions</strong><ul>
+<li>This is an advanced topic. However regular expressions are used in many programming languages for text processing. They enable sophisticated processing of text with just a few lines of code. Go to <a href="http://www.regular-expressions.info/tutorial.html">http://www.regular-expressions.info/tutorial.html</a> for a very thorough tutorial.</li>
+</ul>
+</li>
+</ul>
 
 </div>
 </div>
@@ -11939,7 +11900,7 @@ PostgreSQL Documentation: <a href="https://www.postgresql.org/docs/10/static/ind
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Version-Info">Version Info<a class="anchor-link" href="#Version-Info">&#182;</a></h2><ul>
-<li><strong>Last Revised:</strong> 30 Dec 2017</li>
+<li><strong>Last Revised:</strong> 31 Dec 2017</li>
 <li><strong>Revised by:</strong> Stacy I.</li>
 </ul>
 <p><a href="index.html">Back to Overview</a></p>
