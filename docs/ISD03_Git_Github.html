@@ -11785,7 +11785,7 @@ div#notebook {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="ISD03---Version-Control-System:-Git-and-Github">ISD03 - Version Control System: Git and Github<a class="anchor-link" href="#ISD03---Version-Control-System:-Git-and-Github">&#182;</a></h1><h2 id="1.-Git">1. Git<a class="anchor-link" href="#1.-Git">&#182;</a></h2><h3 id="1.A-Overview">1.A Overview<a class="anchor-link" href="#1.A-Overview">&#182;</a></h3><p>Software developers use version control systems to save versions of their software projects and share and synchronize their code with others. The IRS uses one of the most popular version controls systems, <em>Git</em>, which was originally created by Linus Torvalds, the creator of Linux.</p>
-<p>Github is an online repository for computer code that is designed to work closely with Git. All of the IRS's computer code is stored on Git. Here are some typical tasks that use Git or Github:</p>
+<p>Github is an online repository for computer code that is designed to work closely with Git. All of the IRS's computer code is stored on Github. Here are some typical tasks that use Git or Github:</p>
 <ul>
 <li>Download the scouting system code from Github.</li>
 <li>Create a separate version of the scouting system to make changes without affecting other programmers' work.</li>
@@ -11796,9 +11796,9 @@ div#notebook {
 <li><p>Go to <a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a> and click the download link for your operating system near the top of the page. (Do not download the GUI client -- we will use the command line version of git.)</p>
 <p><img src="images\ISD03\git_download.png" alt="Git Download Page"></p>
 </li>
-<li><p>Run the git installer. When asked to <em>Choose the default editor used by Git,</em> ensure <em>User the Nano Editor by Default</em> is checked. On the next screen, ensure <em>Use Git from Windows Command Prompt</em> is checked. Otherwise, accept all default options.</p>
+<li><p>Run the git installer. When asked to <em>Choose the default editor used by Git,</em> ensure <em>Use the Nano Editor by Default</em> is checked. On the next screen, ensure <em>Use Git from Windows Command Prompt</em> is checked. Otherwise, accept all default options.</p>
 </li>
-<li><p>Open a command window and type <code>path</code> to check the contents of the <em>path</em> environment variable. You should find <em>C:\Program Files\Git\cmd</em> in the output. If not, add it to the <em>path</em> variable using the process described in ISD02.</p>
+<li><p>Open a command window and type <code>path</code> to check the contents of the <em>path</em> environment variable. You should find <em>C:\Program Files\Git\cmd</em> in the output. If not, add it to the <em>path</em> variable using the process described in ISD02 section 1, <em>Environment Variables</em>.</p>
 </li>
 <li><p>Verify that git was installed by entering <code>git --version</code> at the command prompt.</p>
 <p><img src="images/ISD03/git_path.png" alt="Verify Git Installation"></p>
@@ -11810,7 +11810,7 @@ div#notebook {
 git config --global user.email johndoe@example.com</code></pre>
 <p>Check your settings with <code>git config --list</code>.</p>
 <p><strong>Further Reading:</strong>
-<a href="https://git-scm.com/book/en/v2">https://git-scm.com/book/en/v2</a> -- I strongly recommend reading chapters one and two of the Git Book.</p>
+<a href="https://git-scm.com/book/en/v2">https://git-scm.com/book/en/v2</a> -- I strongly recommend reading chapters one and two of the Git Book. You don't have to do it right this second, but soon.</p>
 
 </div>
 </div>
@@ -11820,13 +11820,14 @@ git config --global user.email johndoe@example.com</code></pre>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="2.-Github">2. Github<a class="anchor-link" href="#2.-Github">&#182;</a></h2><ol>
-<li><p>The IRS maintains all of it's on Github, which is an online repository for software progrmming projects. Go to <a href="https://github.com/irs1318dev">https://github.com/irs1318dev</a> to see the IRS projects that are stored on Github. Follow the remainder of this procedure to download the scouting system code to your computer.</p>
+<li><p>The IRS maintains all of it's code on Github, which is an online repository for software progrmming projects. Go to <a href="https://github.com/irs1318dev">https://github.com/irs1318dev</a> to see the IRS projects that are stored on Github. Follow the remainder of this procedure to download the scouting system code to your computer.</p>
 </li>
 <li><p>On the Github website, click the signup link in the upper right and follow the instructions on screen to create your own Github account. Choose the <em>Free Plan</em> option.</p>
 </li>
 <li><p>Create an empty folder on your local computer to store the the scouting system code. This document will assume you created the folder at <em>C:\Users{account_name}\OneDrive\Projects\scouting2017</em>.</p>
 </li>
-<li><p>Follow the guideance in ISD02 to create a shortcut to a command window that opens in the folder you just created in step 3.</p>
+<li><p>Follow the guideance in ISD02 section 2.C, <em>Customizing a Command Window</em>, to create a shortcut to a command window that opens in the folder you just created in step 3. Remember, you will insert the path to the folder in the <em>Start in:</em> box of the command prompt properties dialog. One easy way to do this is to copy the folder path from the address bar in the <em>File Explorer</em> window. Click on the right hand side of the address bar (where there is no text) to highlight the path and hit CTRL+C to copy it:</p>
+<p><img src="images/ISD03/folder_path.png" alt="File Explorer"></p>
 </li>
 <li><p>Go to <a href="https://github.com/irs1318dev/irsScouting2017">https://github.com/irs1318dev/irsScouting2017</a> to see the scouting system code:</p>
 <p><img src="images/ISD03/github_irsScouting.png" alt="irsScouting2017 Repository on Github"></p>
@@ -11850,7 +11851,7 @@ git config --global user.email johndoe@example.com</code></pre>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Version-Info">Version Info<a class="anchor-link" href="#Version-Info">&#182;</a></h2><ul>
-<li><strong>Last Revised:</strong> 22 Dec 2017</li>
+<li><strong>Last Revised:</strong> 7 Jan 2018</li>
 <li><strong>Revised by:</strong> Stacy I.</li>
 </ul>
 <p><a href="index.html">Back to Overview</a></p>
