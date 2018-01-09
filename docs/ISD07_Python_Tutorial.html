@@ -11876,6 +11876,10 @@ div#notebook {
 <li>Another section of the documenation that I use frequently.</li>
 </ul>
 </li>
+<li><strong>Section 6.1: Regular Expressions</strong><ul>
+<li>This is an advanced topic. However regular expressions are used in many programming languages for text processing. They enable sophisticated processing of text with just a few lines of code. Go to <a href="http://www.regular-expressions.info/tutorial.html">http://www.regular-expressions.info/tutorial.html</a> for a very thorough tutorial.</li>
+</ul>
+</li>
 </ul>
 
 </div>
@@ -11885,12 +11889,28 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="7.-Other-Topics">7. Other Topics<a class="anchor-link" href="#7.-Other-Topics">&#182;</a></h2><ul>
-<li><strong>Python Libarry Section 6.1: Regular Expressions</strong><ul>
-<li>This is an advanced topic. However regular expressions are used in many programming languages for text processing. They enable sophisticated processing of text with just a few lines of code. Go to <a href="http://www.regular-expressions.info/tutorial.html">http://www.regular-expressions.info/tutorial.html</a> for a very thorough tutorial.</li>
-</ul>
+<h2 id="7.-Coding-Style">7. Coding Style<a class="anchor-link" href="#7.-Coding-Style">&#182;</a></h2><p>It's important to use a consistent style of coding. The IRS follows the <em>Google Python Style Guide</em>, available at <a href="https://google.github.io/styleguide/pyguide.html">https://google.github.io/styleguide/pyguide.html</a>. The PEP 8 and PEP 257 doucments are helpful as well.</p>
+<h3 id="A.-Google-Python-Style-Guide">A. Google Python Style Guide<a class="anchor-link" href="#A.-Google-Python-Style-Guide">&#182;</a></h3><p>The IRS scouting system should conform to the the <em>Google Python Style Guide</em>. Read through this document and focus on the following sections:</p>
+<ul>
+<li><strong>Modules and Packages:</strong> Always import the entire module using the full package name. Assign an alias for frequently accessed objects with long package or module names. Use the same alias for frequently access modules throughout the scouting system. For example:
+<pre><code>import server.model.connection as smc
+# Every Python module that imports server.model.connection will use the 'smc' alias.
+# ...
+conn = smc.engine.connect()</code></pre>
 </li>
+<li><strong>Line Length:</strong> Continue lines of code onto subsequent lines so they do not extend past 80 characters. Per PEP 8 (see below), blocks of text in comments should not extend past 72 characters.</li>
+<li><strong>Parenthesis</strong></li>
+<li><strong>Indentation</strong></li>
+<li><strong>Blank Lines</strong></li>
+<li><strong>White Space</strong></li>
+<li><strong>Comments</strong></li>
+<li><strong>Classes</strong></li>
+<li><strong>Strings:</strong> The IRS scouting system uses double quotation marks(") to deliniate strings. The single quotation mark (') can be used when the string needs to include double quotation marks.</li>
+<li><strong>Imports Formatting</strong></li>
+<li><strong>Naming</strong></li>
 </ul>
+<h3 id="B.-PEP-8,-Style-Guide-for-Python-Code">B. PEP 8, Style Guide for Python Code<a class="anchor-link" href="#B.-PEP-8,-Style-Guide-for-Python-Code">&#182;</a></h3><p>PEP stands for <em>Python Enhancement Proposal</em>. There are hundreds of PEP documents that explain features of Python on the python.org website. PEP 8 is available at <a href="https://www.python.org/dev/peps/pep-0008/">https://www.python.org/dev/peps/pep-0008/</a>. For the most part, PEP8 is consistent with the <em>Google Python Style Guide</em>. PEP8 provides is less terse then the Google document and provides more thorough explanations of the style reccommendations.</p>
+<h3 id="C.-PEP-257,-Docstring-Conventions">C. PEP 257, Docstring Conventions<a class="anchor-link" href="#C.-PEP-257,-Docstring-Conventions">&#182;</a></h3><p>C. Finally, PEP 257, available at <a href="https://www.python.org/dev/peps/pep-0257/">https://www.python.org/dev/peps/pep-0257/</a>, provides guideance on formatting docstrings. Python uses docstrings to embed documentation into the Python code (see <a href="https://docs.python.org/3/tutorial/controlflow.html#documentation-strings">https://docs.python.org/3/tutorial/controlflow.html#documentation-strings</a>). Docstrings are available to Python programs and from the Python command prompt. The scouting system uses docstrings extensively.</p>
 
 </div>
 </div>
