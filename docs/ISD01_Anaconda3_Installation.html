@@ -11787,7 +11787,13 @@ div#notebook {
 <h1 id="ISD01---Installing-Anaconda-Python">ISD01 - Installing Anaconda Python<a class="anchor-link" href="#ISD01---Installing-Anaconda-Python">&#182;</a></h1><p>The Anaconda Python stack is a customized version of Python that is relatively easy to use. In addition to Python, Anaconda provides a plethora of commonly used Python software packages.</p>
 <ol>
 <li>Download and the Anaconda Python 3 stack from <a href="https://www.anaconda.com/download/">https://www.anaconda.com/download/</a>. Make sure you download the 64-bit Python 3 version (do not download the Python 2 version!).</li>
-<li>Run the Anaconda installer and select all default options during the installation process, including <em>Install for this user only.</em></li>
+<li><p>Run the Anaconda installer. Ensure that <em>Install for this user only.</em> is checked during installation. Also, when you get to the following dialog, ensure both checkboxes are checked:</p>
+<p><img src="images/ISD01/conda_dlg.png" alt="Conda Installation"></p>
+<ul>
+<li>Othewise, accept all default options.</li>
+<li>Yes, the install programs says that adding anaconda to the Path variable is not recommended. I recommend you do it anyway so you can run anaconda commands from regular command windows. I have not had any problems due to having Anaconda added to the path variable.</li>
+</ul>
+</li>
 <li><p>Now verify that you can run anaconda commands at the command prompt. Open a command prompt window by typing <code>cmd</code> in the taskbar search box selecting the <em>Command Prompt</em> item. Next type <code>conda -V</code> at the prompt (make sure you type a capital 'V') and hit enter:</p>
 <p>If you followed the instructions exactly you will see this error message:</p>
 <p><img src="images/ISD01/conda_error.png" alt="Conda not recoginized"></p>
@@ -11818,7 +11824,7 @@ conda install cherrypy</code></pre>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Version-Info">Version Info<a class="anchor-link" href="#Version-Info">&#182;</a></h2><ul>
-<li><strong>Last Revised:</strong> 18 Dec 2017</li>
+<li><strong>Last Revised:</strong> 13 Jan 2018</li>
 <li><strong>Revised by:</strong> Stacy I.</li>
 </ul>
 <p><a href="index.html">Back to Overview</a></p>
