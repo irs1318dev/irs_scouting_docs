@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>ISD05_PostgreSQL_Installation</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>ISD05_Postgresql_Installation</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
@@ -11795,16 +11795,16 @@ div#notebook {
 <ol>
 <li><p>Verify the location of your Postgresql data directory. It’s probably located in <code>C:\Program Files\PostgreSQL\10\data</code>.</p>
 </li>
-<li><p>Refer to section ISD02 and add an environment variable called PGDATA (if it doesn't already exist). The value of the environment variable will be the location of the PostgreSQL data directory (<code>C:\Program Files\PostgreSQL\10\data</code>)</p>
+<li><p>Refer to section 1 of ISD02 and add an environment variable called PGDATA (if it doesn't already exist). The value of the environment variable will be the location of the PostgreSQL data directory (<code>C:\Program Files\PostgreSQL\10\data</code>)</p>
 <p><img src="images/ISD05/env_pgdata.png" alt="Edit PGDATA Variable"></p>
 </li>
 <li><p>While you have the environment variable dialogs open, add the location of the Postgresql <em>bin</em> folder to the <code>Path</code> variable for your account. It's probably at <code>C:\Program Files\PostgreSQL\10\bin</code>.</p>
 </li>
-<li><p>Type "Services" into the task bar search box and select the <em>Services</em> desktop app.</p>
+<li><p>Type "Services" into the task bar search box and right click on the <em>Services</em> desktop app. Select <em>Run as Administrator</em> from the context menu:</p>
+<p><img src="images/ISD05/pg_administrator.png" alt="Open Services Dialog"></p>
 </li>
 <li><p>Find and double-click on the <em>Postgresql-x64-10</em> service.</p>
-
-<pre><code> ![Windows Services](images/ISD05/pg_service.png)</code></pre>
+<p><img src="images/ISD05/pg_service.png" alt="Windows Services"></p>
 </li>
 <li><p>Change the value in the <em>Startup type:</em> dropdown box to <em>Manual</em>. Click <em>OK</em>.</p>
 <p><img src="images/ISD05/pg_manual_service.png" alt="Manual Service"></p>
@@ -11812,7 +11812,7 @@ div#notebook {
 <li><p>Now open a command prompt and see if the database server is running by typing <code>pg_ctl status</code>. You should see this:</p>
 <p><img src="images/ISD05/pg_ctl_status.png" alt="Database Server Status"></p>
 </li>
-<li><p>Type <code>pg_ctl start</code> to start the server. (You can stop the server by typing <code>pg_ctl stop</code>, but leave the server running if you are continuing to seciton 3.</p>
+<li><p>Type <code>pg_ctl start</code> to start the server. (You can stop the server by typing <code>pg_ctl stop</code>, but leave the server running if you are continuing to section 3.</p>
 </li>
 </ol>
 
@@ -11832,7 +11832,7 @@ div#notebook {
 <li><p>Expand the items in the browser window on the left (<em>Servers -&gt; PostgreSQL 10 -&gt; Login/Group Roles</em>). Right click on <em>Login/Group Roles</em> and select <em>Create -&gt; Login/Group Role...</em>.</p>
 <p><img src="images\ISD05\pg_create_role.png" alt="Create Database Role"></p>
 </li>
-<li><p>The <em>Create Login/Group Role</em> dialog will appear. On the general tab, name the role "irs1318". On the <em>Definition</em> tab, assign the password "irs1318". On the <em>Priviliges</em> tab, set <em>Can Login</em> and <em>Create databases</em> to <em>Yes</em>.</p>
+<li><p>The <em>Create Login/Group Role</em> dialog will appear. On the general tab, name the role "irs1318". On the <em>Definition</em> tab, assign the password "irs1318". On the <em>Privileges</em> tab, set <em>Can Login</em> and <em>Create databases</em> to <em>Yes</em>.</p>
 <p><img src="images\ISD05\pg_permissions.png" alt="Assign Permissions"></p>
 </li>
 <li><p>Close pgAdmin and open a command prompt. Enter the following command to create a new database:</p>
@@ -11880,10 +11880,11 @@ PostgreSQL Documentation: <a href="https://www.postgresql.org/docs/10/static/ind
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="5.-Using-Microsoft-Access-to-View-Contents-of-Scouting-Database">5. Using Microsoft Access to View Contents of Scouting Database<a class="anchor-link" href="#5.-Using-Microsoft-Access-to-View-Contents-of-Scouting-Database">&#182;</a></h2><ol>
+<h2 id="5.-Optional-Step:-Using-Microsoft-Access-to-View-Contents-of-Scouting-Database">5. Optional Step: Using Microsoft Access to View Contents of Scouting Database<a class="anchor-link" href="#5.-Optional-Step:-Using-Microsoft-Access-to-View-Contents-of-Scouting-Database">&#182;</a></h2><p>This step is optional. It is convenient (but not necessary) to be able to view the contents of the scouting database in Microsoft Access, but not every FIRST student has access to Access due to it being commercial software. I recorded the steps necessary to connect Access to the scouting database because I knew I would eventually forget it and I don't want to have to figure it out again.</p>
+<ol>
 <li><p>Download and install the PostgreSQL ODBC driver from <a href="https://www.postgresql.org/ftp/odbc/versions/msi/">https://www.postgresql.org/ftp/odbc/versions/msi/</a>. ODBC, which stands for open database connectivity, is a standard protocol for programs to commmunicate with database servers. Microsoft Access will use the ODBC driver to communicate with the PostgreSQL database server.</p>
 <ul>
-<li>Check the version dates and download the most recent version of the driver, most likely located at the bottom of the page.</li>
+<li>Check the version dates and download the most recent version of the driver, which is most likely located at the bottom of the page.</li>
 <li>PostgreSQL gives you the choice of downloading either the 32 or 64 bit versions of the ODBC driver.<ul>
 <li>Only download the 64-bit version (file name ends in <em>x64</em>) if you installed the 64-bit version of Microsoft Access. Otherwise download and install the 32-bit version (file name ends in <em>x86</em>). Even though you probably have a 64-bit computer, you probably have the 32-bit version of Access because that's what Microsoft installs by default.</li>
 <li>You can use the Microsoft Office installation location to determine whether you have the 32 or 64-bit version. If Microsoft Office is installed in <em>C:\Program Files (x86)</em>, you have the 32-bit version. If it's installed in <em>C:\Program Files</em>, then you have the 64-bit version.</li>
@@ -11919,7 +11920,7 @@ PostgreSQL Documentation: <a href="https://www.postgresql.org/docs/10/static/ind
 </li>
 <li><p>Next, Access will display a list of all fields in the <em>measures</em> table and will ask to select up to 10 fields that uniquely idenitfy each row (this is happening because the <em>measures</em> table uses a multi-field primary key -- all other tables in the database use a single <em>id</em> column for the primary key). Select <em>date _id, event_id, level_id, match_id, alliance_id, team_id, actor_id, task_id, phase_id, and reason_id</em> and click <em>OK</em>.</p>
 </li>
-<li><p>Now you should see a list of tables in the scouting database. Double click on any tables to see it's contents.</p>
+<li><p>Now you should see a list of tables in the scouting database. Double click on any table to see it's contents.</p>
 </li>
 <li><p>Save the database to a new file (<em>File -&gt; </em>Save As*) before closing it, to ensure the links to the PostgreSQL tables are saved.</p>
 </li>
@@ -11939,7 +11940,7 @@ PostgreSQL Documentation: <a href="https://www.postgresql.org/docs/10/static/ind
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Version-Info">Version Info<a class="anchor-link" href="#Version-Info">&#182;</a></h2><ul>
-<li><strong>Last Revised:</strong> 30 Dec 2017</li>
+<li><strong>Last Revised:</strong> 14 Jan 2017</li>
 <li><strong>Revised by:</strong> Stacy I.</li>
 </ul>
 <p><a href="index.html">Back to Overview</a></p>
