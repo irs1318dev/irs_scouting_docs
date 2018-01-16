@@ -11786,24 +11786,26 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="ISD01---Installing-Anaconda-Python">ISD01 - Installing Anaconda Python<a class="anchor-link" href="#ISD01---Installing-Anaconda-Python">&#182;</a></h1><p>The Anaconda Python stack is a customized version of Python that is relatively easy to use. In addition to Python, Anaconda provides a plethora of commonly used Python software packages.</p>
 <ol>
-<li>Download and the Anaconda Python 3 stack from <a href="https://www.anaconda.com/download/">https://www.anaconda.com/download/</a>. Make sure you download the 64-bit Python 3 version (do not download the Python 2 version!).</li>
+<li><p>Download and the Anaconda Python 3 stack from <a href="https://www.anaconda.com/download/">https://www.anaconda.com/download/</a>. Make sure you download the 64-bit Python 3 version (do not download the Python 2 version!).<br/><br/></p>
+</li>
 <li><p>Run the Anaconda installer. Ensure that <em>Install for this user only.</em> is checked during installation. Also, when you get to the following dialog, ensure both checkboxes are checked:</p>
 <p><img src="images/ISD01/conda_dlg.png" alt="Conda Installation"></p>
 <ul>
 <li>Othewise, accept all default options.</li>
-<li>Yes, the install programs says that adding anaconda to the Path variable is not recommended. I recommend you do it anyway so you can run anaconda commands from regular command windows. I have not had any problems due to having Anaconda added to the path variable.</li>
+<li>Yes, the install programs says that adding anaconda to the Path variable is not recommended. I recommend you do it anyway so you can run anaconda commands from regular command windows. I have not had any problems due to having Anaconda added to the path variable.<br/><br/></li>
 </ul>
 </li>
 <li><p>Now verify that you can run anaconda commands at the command prompt. Open a command prompt window by typing <code>cmd</code> in the taskbar search box selecting the <em>Command Prompt</em> item. Next type <code>conda -V</code> at the prompt (make sure you type a capital 'V') and hit enter:</p>
-<p>If you followed the instructions exactly you will see this error message:</p>
+<p>If you followed the instructions exactly, Anaconda will print its version number.<br/><br/></p>
+</li>
+<li><p>If you omitted checking the <em>Add Anaconda to the PATH environment variable</em> checkbox, you will see this error message:</p>
 <p><img src="images/ISD01/conda_error.png" alt="Conda not recoginized"></p>
-<p>By typing <code>conda</code>, we are telling Windows that we want to run the <em>conda.exe</em> program, but Windows can't find the program because by default, Windows only looks in the current directory. In the above example, the current directory is <em>C:\Users\Stacy</em> (<em>Stacy</em> is the user account name), but the <em>conda.exe</em> file is located in <em>C:{user_account_name}\Anaconda3\Scripts</em>.</p>
-<p>One option is to change the current directory to <em>C:{user_account_name}\Anaconda3\Scripts</em> every time we want to run the <code>conda</code> command. Enter the following two commands at the command prompt (replace {user_account_name} with your account username:</p>
+<p>If this happens, change the current directory to <em>C:{user_account_name}\Anaconda3\Scripts</em> and then run the <code>conda</code> command. Enter the following two commands at the command prompt (replace {user_account_name} with your account username:</p>
 
 <pre><code> cd C:\{user_account_name}\Anaconda3\Scripts
  conda -V</code></pre>
 <p>The results should look like this:</p>
-<p><img src="images/ISD01/conda_cd.png" alt="Change to Anaconda Directory"></p>
+<p><img src="images/ISD01/conda_cd.png" alt="Change to Anaconda Directory"><br/><br/></p>
 </li>
 <li><p>Stay in the <em>Anaconda3\Scripts</em> folder. Type the following commands to install additional Python packages that the scouting system needs (Enter <code>Y</code> when prompted:</p>
 
@@ -11824,7 +11826,7 @@ conda install cherrypy</code></pre>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Version-Info">Version Info<a class="anchor-link" href="#Version-Info">&#182;</a></h2><ul>
-<li><strong>Last Revised:</strong> 13 Jan 2018</li>
+<li><strong>Last Revised:</strong> 16 Jan 2018</li>
 <li><strong>Revised by:</strong> Stacy I.</li>
 </ul>
 <p><a href="index.html">Back to Overview</a></p>

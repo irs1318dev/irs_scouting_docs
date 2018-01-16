@@ -11792,37 +11792,27 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="1.-Environment-Variables">1. Environment Variables<a class="anchor-link" href="#1.-Environment-Variables">&#182;</a></h2><p>In ISD01 we were able to rund the <code>conda</code> command by navigating within the command prompt to the directory that contains the <em>conda.exe</em> file. But this practice is cumbersome. Instead, we can use <em>environment variables</em> to tell Windows where to look for programs when it doesn't find them in the current directory.</p>
-<p>Environment variables are operating system settings that are used for many different purposes.</p>
+<h2 id="1.-Environment-Variables">1. Environment Variables<a class="anchor-link" href="#1.-Environment-Variables">&#182;</a></h2><p>Environment variables are a special type of operating system setting that can be used for many different purposes. One common Windows environment variable is the <code>Path</code> variable, which tells the operating system where to look for programs that are typed at the command line.</p>
+<p>You do not have to complete this section if you were able to run the <code>conda</code> command in the previous section without having to navigate to the <em>Anaconda3/Scripts</em> folder. I recommend you read through this section anyway becasue subsequent ISDs refer to it.</p>
 <ol>
-<li><p>To see the current environment variables, type <code>env</code> in the taskbar search box and select the option <em>Edit the <strong>Environment</strong> variables for your account.</em></p>
-<ol>
-<li>This will open a dialog box for editing environment variables. The upper box contains environment variables that apply only to the current logged-in account, and the bottom box lists environment variables that apply to all accounts on the system.</li>
-</ol>
+<li><p>To see the current environment variables, type <code>env</code> in the taskbar search box and select the option <em>Edit the <strong>Environment</strong> variables for your account.</em> <br/><br/>
+This will open a dialog box for editing environment variables. The upper box contains environment variables that apply only to the currently logged-in account, and the bottom box lists environment variables that apply to all accounts on the system.<br/><br/></p>
 </li>
-<li><p>Don't touch the bottom box with the system variables. Select the <code>Path</code> variable in the upper box with the account variables, then click <em>Edit</em>.</p>
-<ol>
-<li>This displays a dialog box with a list of folder locations. The <code>Path</code> variable contains the list of folders in which the Windows command window will look for programs when it doesn't find them in the current directory. </li>
-</ol>
+<li><p>Don't touch the bottom box with the system variables. Select the <code>Path</code> variable in the upper box with the account variables, then click <em>Edit</em>.<br/><br/>
+This displays a dialog box with a list of folder locations. The <code>Path</code> variable contains the list of folders in which the Windows command window will look for programs when it doesn't find them in the current directory. <br/><br/></p>
 </li>
 <li><p>In the <em>Edit Environment Variables</em>, click <em>New</em> and then click <em>Browse</em>. Navigate to the <em>C:\Users{account_user_name}\Anaconda3\Scripts</em> directory and click <em>OK</em>. Keep clicking <em>OK</em> until you've closed all of the dialog boxes that you just opened.</p>
+<p><img src="images/ISD02/env_var.png" alt="Editing Environment Variables"><br/><br/></p>
+</li>
+<li><p>Let's verify the <code>Path</code> variable was set correctly. Open a new command window and do not change the directory. Type <code>conda -V</code> and hit enter. If you see the Anaconda version number, you edited the path variable correctly. If not, go back and verify that you set the <code>Path</code> variable correctly.<br/><br/></p>
+</li>
+<li><p>You can check environment variables at the command line. Enter the command <code>Set Path</code> to see the value of the <code>Path</code> variable.<br/><br/></p>
 </li>
 </ol>
-<p><img src="images/ISD02/env_var.png" alt="Editing Environment Variables"></p>
-<ol>
-<li><p>Let's verify the <code>Path</code> variable was set correctly. Open a new command window and do not change the directory. Type <code>conda -V</code> and hit enter. If you see the Anaconda version number, you edited the path variable correctly. If not, go back and verify that you set the <code>Path</code> variable correctly.</p>
-</li>
-<li><p>You can check environment variables at the command line. Enter the command <code>Set Path</code> to see the value of the <code>Path</code> variable.</p>
-</li>
-</ol>
-<p><strong>Notes:</strong></p>
-<ol>
-<li>Environment variables are case-insensitive. <code>Path</code>, <code>PATH</code>, <code>path</code>, and <code>pAtH</code> are all the same variable.</li>
-</ol>
-<p><strong>Further Reading:</strong></p>
-<ol>
-<li>Type <code>help set</code> at the command prompt.</li>
-</ol>
+<p><strong>Notes:</strong>
+Environment variables are case-insensitive. <code>Path</code>, <code>PATH</code>, <code>path</code>, and <code>pAtH</code> are all the same variable.</p>
+<p><strong>Further Reading:</strong>
+Type <code>help set</code> at the command prompt.</p>
 
 </div>
 </div>
@@ -11840,7 +11830,7 @@ div#notebook {
 <p>The IRS uses the command line for tasks such as version control (i.e., git), managing the database server, checking environment variables, installing Python packages, and running checks on their python code.</p>
 <h3 id="B.-Opening-a-Command-Window">B. Opening a Command Window<a class="anchor-link" href="#B.-Opening-a-Command-Window">&#182;</a></h3><ol>
 <li><p>In addition to typing <code>cmd</code> or <code>command</code> in the taskbar search box, one can find the <em>Command Prompt</em> program in the <em>Windows System</em> folder within the <em>All Programs</em> portion of the start menu.</p>
-<p><img src="images/ISD02/all_programs.png" alt="All Programs"></p>
+<p><img src="images/ISD02/all_programs.png" alt="All Programs"><br/><br/></p>
 </li>
 <li><p>To make it easier to open a command window, create a shortcut on the desktop by dragging the <em>Command Prompt</em> icon from the start menu to your desktop.</p>
 </li>
@@ -11850,7 +11840,7 @@ div#notebook {
 <ol>
 <li><p>You can change the starting location (i.e., the directory that is displayed at the prompt) by pasting a folder path in the <em>Start in:</em> box on the <em>Shortcut</em> tab of the <em>Command Prompt Properties</em> dialog box.</p>
 </li>
-<li><p>You can many other properties as well, including the background and text colors, the size of the window, and the font. You can even make the command window semi-transparent.</p>
+<li><p>You can change many other properties as well, including the background and text colors, the size of the window, and the font. You can even make the command window semi-transparent.</p>
 <p><img src="images/ISD02/cmd_properties.png" alt="Command Prompt Properties"></p>
 </li>
 </ol>
@@ -11890,15 +11880,15 @@ div#notebook {
 </li>
 <li><strong>del (Delete File)</strong><ul>
 <li><code>del old_file.py</code> deletes <em>old_file.py</em> in the current folder.</li>
-<li><code>del *.txt*</code> deletes all files ending in <em>.txt</em> in the current folder.</li>
+<li><code>del *.txt*</code> deletes all files ending in <em>.txt</em> in the current folder. Note the use of '*' as a wildcard.</li>
 </ul>
 </li>
 <li><strong>copy (Copy File)</strong><ul>
-<li><code>copy s*.* C:\Users\Stacy\Documents</code> copies all files that start with 'S' to the documents folder.</li>
+<li><code>copy s*.* C:\Users\Stacy\Documents</code> copies all files that start with 's' to the documents folder.</li>
 </ul>
 </li>
 <li><strong>move (Move File)</strong><ul>
-<li><code>move *s.docx C:\Users\Stacy\Documents</code> moves all Microsoft Word files that end in 'S' to the documents folder.</li>
+<li><code>move *s.docx C:\Users\Stacy\Documents</code> moves all Microsoft Word files that end in 's' to the documents folder.</li>
 </ul>
 </li>
 <li><strong>cls (Clear Screen)</strong><ul>
@@ -11924,7 +11914,7 @@ div#notebook {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Version-Info">Version Info<a class="anchor-link" href="#Version-Info">&#182;</a></h2><ul>
-<li><strong>Last Revised:</strong> 7 Jan 2018</li>
+<li><strong>Last Revised:</strong> 15 Jan 2018</li>
 <li><strong>Revised by:</strong> Stacy I.</li>
 </ul>
 <p><a href="index.html">Back to Overview</a></p>

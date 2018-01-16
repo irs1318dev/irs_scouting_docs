@@ -11794,14 +11794,14 @@ div#notebook {
 </ul>
 <h3 id="1.B-Download-and-Installation">1.B Download and Installation<a class="anchor-link" href="#1.B-Download-and-Installation">&#182;</a></h3><ol>
 <li><p>Go to <a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a> and click the download link for your operating system near the top of the page. (Do not download the GUI client -- we will use the command line version of git.)</p>
-<p><img src="images\ISD03\git_download.png" alt="Git Download Page"></p>
+<p><img src="images\ISD03\git_download.png" alt="Git Download Page"><br/><br/></p>
 </li>
-<li><p>Run the git installer. When asked to <em>Choose the default editor used by Git,</em> ensure <em>Use the Nano Editor by Default</em> is checked. On the next screen, ensure <em>Use Git from Windows Command Prompt</em> is checked. Otherwise, accept all default options.</p>
+<li><p>Run the git installer. When asked to <em>Choose the default editor used by Git,</em> ensure <em>Use the Nano Editor by Default</em> is checked. On the next screen, ensure <em>Use Git from Windows Command Prompt</em> is checked. Otherwise, accept all default options.<br/><br/></p>
 </li>
-<li><p>Open a command window and type <code>path</code> to check the contents of the <em>path</em> environment variable. You should find <em>C:\Program Files\Git\cmd</em> in the output. If not, add it to the <em>path</em> variable using the process described in ISD02 section 1, <em>Environment Variables</em>.</p>
+<li><p>Open a command window and type <code>path</code> to check the contents of the <em>path</em> environment variable. You should find <em>C:\Program Files\Git\cmd</em> in the output. If not, add it to the <em>path</em> variable using the process described in ISD02 section 1, <em>Environment Variables</em>.<br/><br/></p>
 </li>
 <li><p>Verify that git was installed by entering <code>git --version</code> at the command prompt.</p>
-<p><img src="images/ISD03/git_path.png" alt="Verify Git Installation"></p>
+<p><img src="images/ISD03/git_path.png" alt="Verify Git Installation"><br/><br/></p>
 </li>
 </ol>
 <h3 id="1.C-Configuration">1.C Configuration<a class="anchor-link" href="#1.C-Configuration">&#182;</a></h3><p>Git needs to know who you are so that changes you make will be attributed to you. Enter the following commands at the command prompt (obviously you need to replace "John Doe" and johndoe@example.com with your name and email address):</p>
@@ -11820,24 +11820,26 @@ git config --global user.email johndoe@example.com</code></pre>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="2.-Github">2. Github<a class="anchor-link" href="#2.-Github">&#182;</a></h2><ol>
-<li><p>The IRS maintains all of it's code on Github, which is an online repository for software progrmming projects. Go to <a href="https://github.com/irs1318dev">https://github.com/irs1318dev</a> to see the IRS projects that are stored on Github. Follow the remainder of this procedure to download the scouting system code to your computer.</p>
+<li><p>The IRS maintains all of it's code on Github, which is an online repository for software progrmming projects. Go to <a href="https://github.com/irs1318dev">https://github.com/irs1318dev</a> to see the IRS projects that are stored on Github. Follow the remainder of this procedure to download the scouting system code to your computer.<br/><br/></p>
 </li>
-<li><p>On the Github website, click the signup link in the upper right and follow the instructions on screen to create your own Github account. Choose the <em>Free Plan</em> option.</p>
+<li><p>On the Github website, click the signup link in the upper right and follow the instructions on screen to create your own Github account. Choose the <em>Free Plan</em> option.<br/><br/></p>
 </li>
-<li><p>Create an empty folder on your local computer to store the the scouting system code. This document will assume you created the folder at <em>C:\Users{account_name}\OneDrive\Projects\scouting2017</em>.</p>
+<li><p>Create an empty folder on your local computer to store the the scouting system code. This document will assume you created the folder at <em>C:\Users{account_name}\OneDrive\Projects\scouting2017</em>.<br/><br/></p>
 </li>
 <li><p>Follow the guideance in ISD02 section 2.C, <em>Customizing a Command Window</em>, to create a shortcut to a command window that opens in the folder you just created in step 3. Remember, you will insert the path to the folder in the <em>Start in:</em> box of the command prompt properties dialog. One easy way to do this is to copy the folder path from the address bar in the <em>File Explorer</em> window. Click on the right hand side of the address bar (where there is no text) to highlight the path and hit CTRL+C to copy it:</p>
 <p><img src="images/ISD03/folder_path.png" alt="File Explorer"></p>
 </li>
 <li><p>Go to <a href="https://github.com/irs1318dev/irsScouting2017">https://github.com/irs1318dev/irsScouting2017</a> to see the scouting system code:</p>
 <p><img src="images/ISD03/github_irsScouting.png" alt="irsScouting2017 Repository on Github"></p>
-<p>Github is displaying the files and folders within the top folder of the code repository. You can click on any folder or file to view the contents right on Github.</p>
+<p>Github is displaying the files and folders within the top folder of the code repository. You can click on any folder or file to view the contents right on Github.<br/><br/></p>
 </li>
 <li><p>We can't do much with the code if we leave it on Github. Click the green <em>Clone or download</em> button and then click the clpboard icon to copy the URL that we'll use to download the repository to our local computer:</p>
-<p><img src="images/ISD03/github_clone.png" alt="Clone Repository from Github"></p>
+<p><img src="images/ISD03/github_clone.png" alt="Clone Repository from Github"><br/><br/></p>
 <p>At the command prompt, type <code>git clone</code> and then paste the URL from github to the end of the command and hit <em>Enter</em>:</p>
 <p><img src="images/ISD03/git_clone.png" alt="Git Clone Command"></p>
-<p>The scouting system code is now downloaded to your local folder.</p>
+<p>The scouting system code is now downloaded to your local folder.<br/><br/></p>
+</li>
+<li><p>Finally, follow the procedure in section 1 of ISD02 to create an environment variable called <code>PYTHONPATH</code>. Set the <code>PYTHONPATH</code> variable to the location of the <em>irsScouting2017</em> folder. The directory listed in <code>PYTHONPATH</code> should have several subfolders that contain Python code, such as <em>server</em>, <em>game</em>, and <em>view</em>.</p>
 </li>
 </ol>
 <p><strong>Further Reading:</strong>
@@ -11851,7 +11853,7 @@ git config --global user.email johndoe@example.com</code></pre>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Version-Info">Version Info<a class="anchor-link" href="#Version-Info">&#182;</a></h2><ul>
-<li><strong>Last Revised:</strong> 7 Jan 2018</li>
+<li><strong>Last Revised:</strong> 15 Jan 2018</li>
 <li><strong>Revised by:</strong> Stacy I.</li>
 </ul>
 <p><a href="index.html">Back to Overview</a></p>
